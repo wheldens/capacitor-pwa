@@ -10,7 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:prod": "yarn build --configuration production"
+    "build:prod": "yarn   build --configuration production",
+    "http": "http-server -p 8080 -c-1 www"
   },
   "private": true,
   "dependencies": {
