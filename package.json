@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:prod": "ng build --configuration production",
+    "build:prod": "ng build --configuration production && echo '/* /index.html  200' | cat >www/_redirects",
     "http": "http-server -p 8080 -c-1 www"
   },
   "private": true,
