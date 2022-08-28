@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "ng build --configuration production && echo '/* /index.html  200' | cat >www/_redirects",
-    "http": "http-server -p 8080 -c-1 www"
+    "http": "angular-http-server --path www"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +32,7 @@
     "@capacitor/status-bar": "4.0.1",
     "@ionic/angular": "^6.1.9",
     "@ionic/pwa-elements": "^3.1.1",
+    "angular-http-server": "^1.11.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
