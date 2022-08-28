@@ -27,19 +27,19 @@ export class HomePage {
     this.myImage = image.webPath;
   }
 
-  async getCurrentPosition() {
-    const coordinates = await Geolocation.getCurrentPosition();
+  // async getCurrentPosition() {
+  //   const coordinates = await Geolocation.getCurrentPosition();
 
-    this.position = coordinates;
-  }
+  //   this.position = coordinates;
+  // }
 
-  async share() {
-    await Share.share({
-      title: 'Come and find me',
-      text: `Here's my current location: 
-        ${this.position.coords.latitude}, 
-        ${this.position.coords.longitude}`,
-      url: 'http://ionicacademy.com/'
-    });
-  }
+  // async share() {
+  //   await Share.share({
+  //     title: 'Come and find me',
+  //     text: `Here's my current location: 
+  //       ${this.position.coords.latitude}, 
+  //       ${this.position.coords.longitude}`,
+  //     url: 'http://ionicacademy.com/'
+  //   });
+  // }
 }
