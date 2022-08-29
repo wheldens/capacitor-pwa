@@ -20,19 +20,6 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 })
 export class HomePageModule {
 
-  myImage = null;
 
-  constructor() {}
-
-  async takePicture() {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: true,
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera
-    });
-
-    this.myImage = image.webPath;
-  }
 
 }

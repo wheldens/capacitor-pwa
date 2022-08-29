@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,7 +9,9 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 })
 export class HomePage {
 
-  myImage = null;
+
+images: any[] = [];
+
   constructor() {}
 
   async takePicture() {
@@ -18,7 +22,7 @@ export class HomePage {
       source: CameraSource.Camera
     });
 
-    this.myImage = image.webPath;
+    this.images.push(image);
   }
 
 }
