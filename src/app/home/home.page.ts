@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { AlertController } from '@ionic/angular';
-
-
+import { PhotosService } from '../services/photos.service';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +9,12 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  images: any[] = [];
 
-
-images: any[] = [];
-
-constructor(private alertController: AlertController) {}
+  constructor(
+    private alertController: AlertController,
+    private photosService: PhotosService
+  ) {}
 
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -31,10 +31,15 @@ constructor(private alertController: AlertController) {}
       quality: 90,
       allowEditing: true,
       resultType: CameraResultType.Uri,
-      source: CameraSource.Camera
+      source: CameraSource.Camera,
     });
 
     this.images.push(image);
   }
 
+  getPhotos() {
+    this.photosService.getPhotos().subscribe((res) => {
+      console.log(res);
+    });
+  }
 }

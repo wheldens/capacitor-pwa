@@ -1,12 +1,8 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>
-      Capacitor PWA
-    </ion-title>
-
+    <ion-title> Capacitor PWA </ion-title>
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content>
   <ion-grid>
@@ -14,9 +10,7 @@
       <ion-col size-lg="4">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>
-              Hello
-            </ion-card-title>
+            <ion-card-title> Hello </ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <ion-datetime></ion-datetime>
@@ -26,9 +20,7 @@
       <ion-col>
         <ion-card>
           <ion-card-header>
-            <ion-card-title>
-              Hello
-            </ion-card-title>
+            <ion-card-title> Hello </ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <ion-button (click)="presentAlert()">Click Me</ion-button>
@@ -37,13 +29,17 @@
               <ion-icon name="camera" slot="start"></ion-icon>
               Maak foto
             </ion-button>
+            <ion-button (click)="getPhotos()">
+              <ion-icon name="camera" slot="start"></ion-icon>
+              Get fotos
+            </ion-button>
           </ion-card-content>
 
           <ion-card-content>
             <ion-list>
               <ion-item *ngFor="let img of images">
-                <ion-img [src]="img.webPath"></ion-img>
-              </ion-item>`
+                <ion-img [src]="img.webPath"></ion-img> </ion-item
+              >`
             </ion-list>
           </ion-card-content>
         </ion-card>
