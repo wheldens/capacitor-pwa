@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Photo } from './photo.model';
 import * as photosActions from './photos.actions';
 
 @Component({
@@ -10,7 +10,7 @@ import * as photosActions from './photos.actions';
   styleUrls: ['./photos.page.scss'],
 })
 export class PhotosPage implements OnInit {
-  photos$: Observable<any> = this.store.select((state) => state.photos);
+  photos$: Observable<Photo[]> = this.store.select((state) => state.photos);
 
   constructor(private store: Store<{ photos: any[] }>) {}
 

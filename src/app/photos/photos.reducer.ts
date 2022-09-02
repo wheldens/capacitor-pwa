@@ -1,10 +1,11 @@
 import { Action, createReducer, on } from '@ngrx/store';
+import { Photo } from './photo.model';
 import * as PhotosActions from './photos.actions';
 
 export const photosFeatureKey = 'photos';
 
 export interface State {
-  data: any[];
+  data: Photo[];
 }
 
 export const initialState: State = {

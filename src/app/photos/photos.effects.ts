@@ -13,7 +13,6 @@ export class PhotosEffects {
     (): Observable<Action> =>
       this.actions$.pipe(
         ofType(PhotosActions.loadPhotos.type),
-        tap(() => console.log()),
         mergeMap(() =>
           this.photosService.getAll().pipe(
             map((photos) => ({
