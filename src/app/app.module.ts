@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers, metaReducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { reducers, metaReducers } from './reducers';
       registrationStrategy: 'registerWhenStable:30000',
     }),
     StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot(),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

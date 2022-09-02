@@ -4,17 +4,17 @@ import * as PhotosActions from './photos.actions';
 export const photosFeatureKey = 'photos';
 
 export interface State {
-  test: boolean;
+  data: any[];
 }
 
 export const initialState: State = {
-  test: false,
+  data: [],
 };
 
 export const reducer = createReducer(
   initialState,
 
-  on(PhotosActions.loadPhotoss, (state) => state),
-  on(PhotosActions.loadPhotossSuccess, (state, action) => state),
-  on(PhotosActions.loadPhotossFailure, (state, action) => state)
+  on(PhotosActions.loadPhotos, (state) => state),
+  on(PhotosActions.loadPhotosSuccess, (state, action) => ({ ...state, data: action.payload })),
+  on(PhotosActions.loadPhotosFailure, (state, action) => state)
 );

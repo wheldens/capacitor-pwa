@@ -9,7 +9,7 @@ export class PhotosService {
 
   constructor(private http: HttpClient) {}
 
-  getPhotos() {
+  getAll() {
     return this.http.get<any>(this.dataUrl);
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PhotosService } from '../services/photos.service';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import  * as photosActions from './photos.actions';
 
 @Component({
   selector: 'app-photos',
@@ -7,13 +9,11 @@ import { PhotosService } from '../services/photos.service';
   styleUrls: ['./photos.page.scss'],
 })
 export class PhotosPage implements OnInit {
-  photos: any[];
+  photos$: Observable<any[]> = this.store.select(state => state.photos);
 
-  constructor(private photosService: PhotosService) {}
+  constructor(private store: Store<{ photos: any[] }>) {}
 
   ngOnInit() {
-    this.photosService
-      .getPhotos()
-      .subscribe((photos) => (this.photos = photos));
+    this.store.dispatch({type: photosActions.loadPhotos.type});
   }
 }
