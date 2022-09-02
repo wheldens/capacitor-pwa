@@ -1,12 +1,9 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>photos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
-  <li *ngFor="let photo of photos">
-    {{ photo.title }}
-  </li>
+  <ion-list>
+    <ion-item *ngFor="let photo of (photos$ | async).data">
+      <ion-label >
+        {{ photo.title }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
