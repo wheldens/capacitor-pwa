@@ -15,7 +15,6 @@ export class PhotosEffects {
         ofType(PhotosActions.loadPhotos.type),
         mergeMap(() =>
           this.photosService.getAll().pipe(
-            tap(photos => console.log({photos})),
             map((photos) => ({
               type: PhotosActions.loadPhotosSuccess.type,
               payload: photos,

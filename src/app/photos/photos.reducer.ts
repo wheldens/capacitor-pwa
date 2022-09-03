@@ -1,5 +1,4 @@
 import {
-  Action,
   createFeatureSelector,
   createReducer,
   createSelector,
@@ -31,7 +30,17 @@ export const reducer = createReducer(
 
 // SELECTORS
 export const getPhotoState = createFeatureSelector<State>(photosFeatureKey);
-export const getPhotosSelector = createSelector(
+
+export const getPhotos = createSelector(
   getPhotoState,
   (photoState: State) => photoState.data
 );
+
+export const getPhoto = (id: number) =>
+  createSelector(getPhotoState, (photoState: State) => {
+    if (photoState) {
+      return photoState.data.find((photo) => photo.id === id);
+    } else {
+      return {};
+    }
+  });
