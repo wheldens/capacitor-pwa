@@ -9,6 +9,8 @@ import { PhotosPageRoutingModule } from './photos-routing.module';
 import { PhotosPage } from './photos.page';
 import { EffectsModule } from '@ngrx/effects';
 import { PhotosEffects } from './photos.effects';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+
 
 @NgModule({
   imports: [
@@ -16,7 +18,8 @@ import { PhotosEffects } from './photos.effects';
     FormsModule,
     IonicModule,
     PhotosPageRoutingModule,
-    EffectsModule.forFeature([PhotosEffects])
+    EffectsModule.forFeature([PhotosEffects]),
+    ScrollingModule
   ],
   declarations: [PhotosPage]
 })

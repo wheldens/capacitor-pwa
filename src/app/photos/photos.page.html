@@ -6,4 +6,25 @@
     <ion-title> Photos </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding"> Photos </ion-content>
+<ion-content class="ion-padding">
+  <cdk-virtual-scroll-viewport
+    itemSize="20"
+    minBufferPx="900"
+    maxBufferPx="1350"
+  >
+    <ion-list>
+      <ion-list-header> Photos overview </ion-list-header>
+      <ion-item
+        *cdkVirtualFor="let  photo  of  photos$  | async"
+        [routerLink]="[photo.id]"
+      >
+        <ion-avatar slot="start">
+          <img [src]="photo.thumbnailUrl" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{photo.title}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </cdk-virtual-scroll-viewport>
+</ion-content>
