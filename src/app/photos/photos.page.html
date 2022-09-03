@@ -1,11 +1,5 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button color="dark"></ion-menu-button>
-    </ion-buttons>
-    <ion-title> Photos </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [title]="'Photos'"></app-header>
+
 <ion-content class="ion-padding">
   <cdk-virtual-scroll-viewport
     itemSize="20"
@@ -28,3 +22,5 @@
     </ion-list>
   </cdk-virtual-scroll-viewport>
 </ion-content>
+
+<app-footer></app-footer>

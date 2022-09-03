@@ -10,6 +10,7 @@ import { PhotosPage } from './photos.page';
 import { EffectsModule } from '@ngrx/effects';
 import { PhotosEffects } from './photos.effects';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     IonicModule,
     PhotosPageRoutingModule,
     EffectsModule.forFeature([PhotosEffects]),
-    ScrollingModule
+    ScrollingModule,
+    SharedModule
   ],
   declarations: [PhotosPage]
 })

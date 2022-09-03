@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PhotoDetailsPageRoutingModule } from './photo-details-routing.module';
 
 import { PhotoDetailsPage } from './photo-details.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PhotoDetailsPageRoutingModule
+    PhotoDetailsPageRoutingModule,
+    SharedModule
   ],
   declarations: [PhotoDetailsPage]
 })
