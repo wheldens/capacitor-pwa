@@ -12,7 +12,7 @@ import * as photosActions from './photos.actions';
 export class PhotosPage implements OnInit {
   photos$: Observable<Photo[]> = this.store.select((state) => state.photos);
 
-  constructor(private store: Store<{ photos: any[] }>) {}
+  constructor(private store: Store<{ photos: Photo[] }>) {}
 
   ngOnInit() {
     this.store.dispatch({ type: photosActions.loadPhotos.type });

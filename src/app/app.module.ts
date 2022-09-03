@@ -31,7 +31,6 @@ import { EffectsModule } from '@ngrx/effects';
     }),
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(),
-    // Connects RouterModule with StoreModule
     StoreRouterConnectingModule.forRoot(),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
