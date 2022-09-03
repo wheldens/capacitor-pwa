@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, concatMap, mergeMap, tap } from 'rxjs/operators';
+import { catchError, map, mergeMap } from 'rxjs/operators';
 import { Observable, EMPTY, of } from 'rxjs';
 import * as PhotosActions from './photos.actions';
 import { PhotosService } from '../services/photos.service';

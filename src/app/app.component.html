@@ -1,9 +1,30 @@
 <ion-app>
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-button [routerLink]="['/home']">Home</ion-button>
-      <ion-button [routerLink]="['/photos']">Photos</ion-button>
-    </ion-toolbar>
-  </ion-header>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main-content">
+    <ion-menu
+      side="start"
+      menuId="first"
+      contentId="main-content"
+      persistent="true"
+    >
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Start Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list lines="none">
+          <ion-list-header>
+            Pages
+          </ion-list-header>
+          <ion-item *ngFor="let page of pages" [routerLink]="[page.url]">
+            <ion-icon  slot="start"  [name]="page.icon"></ion-icon>
+            <ion-label>
+              {{ page.title }}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

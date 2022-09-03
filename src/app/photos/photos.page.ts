@@ -15,6 +15,6 @@ export class PhotosPage implements OnInit {
   constructor(private store: Store<{ photos: any[] }>) {}
 
   ngOnInit() {
-    this.store.dispatch({ type: photosActions.loadPhotos.type });
+    // this.store.dispatch({ type: photosActions.loadPhotos.type });
   }
 }
