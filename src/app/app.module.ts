@@ -11,6 +11,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+
 import { reducers, metaReducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 
@@ -29,6 +31,8 @@ import { EffectsModule } from '@ngrx/effects';
     }),
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(),
+    // Connects RouterModule with StoreModule
+    StoreRouterConnectingModule.forRoot(),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
